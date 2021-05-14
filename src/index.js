@@ -4,7 +4,7 @@ const path = require('path')
 const handlebars = require('express-handlebars');
 const { query } = require('express');
 const app = express();
-const port = 3000;
+
 
 const route = require('./routes');
 const db = require('./config/db')
@@ -33,5 +33,5 @@ route(app);
 // });
 
 app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  console.log(`Example app listening at http://localhost:${this.address().port}`)
 });
