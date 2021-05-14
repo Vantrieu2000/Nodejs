@@ -25,6 +25,10 @@ app.set('views',  path.join(__dirname, '/resources/views'))
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+
+app.listen(process.env.port || 3000, function(){
+  console.log(`Example app listening at http://localhost:${this.address().port}`)
+});
 //Route init
 route(app);
 
@@ -32,6 +36,3 @@ route(app);
 //   console.log(`Example app listening at http://localhost:${port}`)
 // });
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log(`Example app listening at http://localhost:${this.address().port}`)
-});
